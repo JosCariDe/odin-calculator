@@ -1,0 +1,28 @@
+.container-calculator {
+    display: flex;
+    justify-content: center;
+}
+
+.calculator {
+    height: 580px;
+    width: 500px;
+    background-color: rgba(0, 0, 0, 0.459);
+    display: flex;
+    flex-direction: column;
+}
+
+.pantalla-calculator {
+    background-color: aqua;
+    height: 100px;
+    width: auto;
+    margin: 10px;
+    border-radius: 5px;
+    gap: 3px;
+}
+
+.botones-calculator button {
+    width: 120px;
+    height: 112px;
+    font-size: 25px;
+    font-weight: 700;
+}
