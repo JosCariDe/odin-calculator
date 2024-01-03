@@ -16,3 +16,15 @@ const division = (a,b) => {
 
 let valor1 , valor2, operador;
 
+const operate = (valor1,valor2,operador) => {
+    switch (operador) {
+        case "+":
+            return suma(valor1,valor2);
+        case "-":
+            return resta(valor1,valor2);
+        case "*":
+            return multiplicacion(valor1,valor2);
+        case "/":
+            return division(valor1,valor2);
+    }
+}
