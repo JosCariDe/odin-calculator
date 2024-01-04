@@ -28,3 +28,15 @@ const operate = (valor1,valor2,operador) => {
             return division(valor1,valor2);
     }
 }
+
+const btnValores = document.querySelectorAll('.btn-valor');
+
+const pantallaValues = document.querySelector('.pantalla-calculator p');
+
+btnValores.forEach( btnElement => {
+    btnElement.addEventListener('click', () => {
+        pantallaValues.textContent += btnElement.textContent;
+    })
+})
+
+
