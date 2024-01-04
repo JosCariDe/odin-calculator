@@ -4,7 +4,7 @@
 }
 
 .calculator {
-    height: 580px;
+    height: 600px;
     width: 500px;
     background-color: rgba(0, 0, 0, 0.459);
     display: flex;
@@ -14,7 +14,7 @@
 }
 
 .pantalla-calculator {
-    background-color: aqua;
+    background-color: rgba(160, 168, 168, 0.955);
     min-height: 100px;
     width: auto;
     margin: 10px;
