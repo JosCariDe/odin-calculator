@@ -46,38 +46,59 @@ btnIgual.addEventListener('click' , () => {
 
 const operacionesAritmeticas = ['+','-','/','*'];
 
+total = 0;
+
+const recortarArr = (array,index) => {
+    valor1 = 0;
+    valor2 = 0;
+    operador = '';
+    array = array.
+}
+
 const calcularPantalla = cadena => {
 
-    const arr = cadena.split('');
+    const arr = []; 
+    arr = cadena.split('');
 
     console.log(arr);
-
-    let flag = false;
 
     valor1 = 0;
     valor2 = 0;
     operador = '';
 
 
-    arr.forEach( (x,index, arry) => {
-        if (!operacionesAritmeticas.includes(x)) {
-            if (!flag) {
-                valor1 += x;
-            } else {
-                valor2 += x;
-            }
-            
-        } else {
-            operador = x;
-            flag = true;
+    arr.forEach( (item, index, array) =>{
+        if ( operacionesAritmeticas.includes(item) ) {
+            recortarArray(array,index);
         }
     })
 
-    return operate( Number(valor1),Number(valor2),operador);
+    return total;
 
 }
 
-console.log(calcularPantalla('16+5'));
-console.log(operate(15,5,'+'));
+
+const recortarArray = (array , index) => {
+    let val1, val2, operad;
+
+    operad = array[index];
+
+    for (var i = index; !operacionesAritmeticas.includes(array[i]); i++) {
+        val1 += i;
+    }
+
+    for (var j = index; !operacionesAritmeticas.includes(array[j]); j--) {
+        val2 += j;
+    }
+
+    val2 = val2.reverse();
+
+    const res = operate(val1,val2,operad);
+    const cantidad = i - j;
+
+    array.splice(j,cantidad,res);
+
+    
 
 
+}
