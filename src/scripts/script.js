@@ -52,7 +52,7 @@ const recortarArr = (array,index) => {
     valor1 = 0;
     valor2 = 0;
     operador = '';
-    array = array.
+    array = array;
 }
 
 const calcularPantalla = cadena => {
@@ -93,12 +93,12 @@ const recortarArray = (array , index) => {
 
     val2 = val2.reverse();
 
-    const res = operate(val1,val2,operad);
+    const res = operate(Number(val1),Number(val2),operad);
     const cantidad = i - j;
 
     array.splice(j,cantidad,res);
 
-    
+
 
 
 }
