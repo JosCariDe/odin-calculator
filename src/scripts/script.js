@@ -32,6 +32,15 @@ const operate = (valor1,valor2,operador) => {
 const btnValores = document.querySelectorAll('.btn-valor');
 
 const pantallaValues = document.querySelector('.pantalla-calculator p');
+const btnDelete = document.querySelector('#btn-delete');
+btnDelete.addEventListener('click', () => {
+    const arrayPantalla = pantallaValues.textContent.split('');
+    
+    arrayPantalla.splice(arrayPantalla.length-1,1)
+    pantallaValues.textContent = arrayPantalla.join('');
+    console.log(arrayPantalla);
+    //pantallaValues.textContent  == pantallaValues 
+})
 
 btnValores.forEach( btnElement => {
     btnElement.addEventListener('click', () => {
@@ -57,7 +66,7 @@ const recortarArr = (array,index) => {
 
 const calcularPantalla = cadena => {
 
-    const arr = []; 
+    let arr = []; 
     arr = cadena.split('');
 
     console.log(arr);
@@ -69,11 +78,14 @@ const calcularPantalla = cadena => {
 
     arr.forEach( (item, index, array) =>{
         if ( operacionesAritmeticas.includes(item) ) {
-            recortarArray(array,index);
+            console.log(index);
+            array = recortarArray(array,index);
+            console.log(index);
         }
     })
 
-    return total;
+
+    return arr.join('');
 
 }
 
@@ -88,17 +100,17 @@ const recortarArray = (array , index) => {
     }
 
     for (var j = index; !operacionesAritmeticas.includes(array[j]); j--) {
-        val2 += j;
+        val2 = j + val2;
     }
 
-    val2 = val2.reverse();
-
-    const res = operate(Number(val1),Number(val2),operad);
+    res = operate(Number(val1),Number(val2),operad);
     const cantidad = i - j;
 
-    array.splice(j,cantidad,res);
 
 
+    array.splice(j,cantidad,String(res).split(''));
+
+    return array;
 
 
 }
